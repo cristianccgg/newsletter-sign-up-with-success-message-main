@@ -20,13 +20,16 @@
   --White: hsl(0, 0%, 100%);
 }
 
-/* .attribution {
-    font-size: 11px;
-    text-align: center;
-  }
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  } */
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+.attribution a {
+  color: var(--Tomato);
+}
 
 main {
   background-color: var(--Charcoal-Grey);
@@ -56,12 +59,13 @@ main {
 
 .title {
   font-size: 4vw;
+  font-weight: 600;
 }
 
-.description,
-.feature {
-  font-size: 1vw;
-  font-weight: 400;
+.description {
+  font-size: 1.5vw;
+  font-weight: 500;
+  text-wrap: ;
 }
 
 .features {
@@ -72,7 +76,15 @@ main {
 
 .list-item {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 10px;
+}
+
+.feature {
+  margin: auto 0px;
+  font-size: 1.2vw;
+  font-weight: 500;
 }
 
 form {
@@ -81,29 +93,231 @@ form {
   gap: 10px;
 }
 
-h3 {
-  font-size: 13px;
-  font-weight: 600;
+.email-msgs {
+  display: flex;
+  justify-content: space-between;
 }
 
-.btn {
-  font-size: 16px;
-  background-color: var(--DarkSlateGrey);
-  color: var(--White);
-  padding: 15px;
+.email-text {
+  font-size: 1vw;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.email-error {
+  font-size: 1vw;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: var(--Tomato);
+}
+
+.active-error {
+  display: none;
+}
+
+.input-lg {
+  height: 50px;
   border-radius: 5px;
+  border: 1px solid hsl(220, 2%, 69%);
+  padding: 10px;
+  font-size: 1vw;
+}
+
+.input-error {
+  background-color: hsla(4, 100%, 67%, 10%);
+  color: var(--Tomato);
+}
+
+.main-btn,
+.message-btn {
+  height: 50px;
+  font-size: 1vw;
+  background-color: var(--DarkSlateGrey);
+  color: white;
+  padding: 0px;
+  border-radius: 5px;
+  border: none;
 }
 
 .rigth-container {
-  width: 100%;
+  width: fit-content;
   height: 100%;
   margin: 0;
-  border: solid;
+  padding: 0;
 }
 
-.img-fluid {
+.img {
+  height: 100%;
+}
+
+.main-btn:hover,
+.message-btn:hover {
+  background-color: var(--Tomato);
+  color: white;
+  box-shadow: 0px 0px 10px var(--Tomato);
 }
 
 .message-container {
+  width: 30vw;
+  height: 30vw;
+  background-color: var(--White);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px 30px 30px 30px;
+}
+
+.img-success {
+  width: 40px;
+}
+
+.thanks {
+  font-size: 3vw;
+}
+
+.confirmation {
+  font-size: 1vw;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.active {
   display: none;
+}
+
+.mobile-img {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .main-container {
+    width: 100vw;
+    height: fit-content;
+    display: grid;
+    padding: 0;
+    row-gap: 0px;
+  }
+
+  .rigth-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 1;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-img {
+    width: 100%;
+  }
+
+  .left-container {
+    height: fit-content;
+    padding: 20px 30px 30px 30px;
+    margin: 0;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 8vw;
+  }
+
+  .description {
+    font-size: 4vw;
+    font-weight: 500;
+  }
+
+  .feature {
+    font-size: 4vw;
+    font-weight: 500;
+  }
+
+  .email-text {
+    font-size: 3vw;
+    margin-top: 10px;
+  }
+
+  .mobile-img {
+    display: unset;
+  }
+
+  .img {
+    display: none;
+  }
+
+  .input-lg {
+    font-size: 4vw;
+  }
+
+  .main-btn,
+  .message-btn {
+    font-size: 4vw;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    display: none;
+  }
+  .attribution a {
+    color: var(--Tomato);
+  }
+
+  .message-container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--White);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px 30px 30px 30px;
+  }
+
+  .img-success {
+    width: 60px;
+  }
+
+  .thanks {
+    font-size: 14vw;
+  }
+
+  .confirmation {
+    font-size: 5vw;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .active {
+    display: none;
+  }
+
+  .main-btn:hover,
+  .message-btn:hover {
+    background-color: var(--Tomato);
+    color: white;
+    box-shadow: 0px 0px 10px var(--Tomato);
+  }
+
+  .email-error {
+    font-size: 3vw;
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: var(--Tomato);
+  }
+
+  .email-msgs {
+    display: flex;
+    align-items: center;
+  }
+
+  .active-error {
+    display: none;
+  }
 }
